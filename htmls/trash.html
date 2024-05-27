@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name ="viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel = "stylesheet" href = "../css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap">
+    <link rel="shortcut icon" href="../img/mainicon.png" type="image/x-icon">
+    <script src="../js/chat-bot.js" defer></script>
+  </head>
+</head>
+<body>
+
+    <div class="chatbot-icon-container">
+        <img src="../img/chat-svgrepo-com.svg" alt="" onclick="showDialog()">
+    </div>
+    
+    <div class="chatbot-container" style="display: none;">
+        <div class="chatbot-header-container">
+            <div class="chatbot-header">
+                <p>Задайте интересующий вопрос.</p>
+                <button type="button" onclick="closeDialog()">×</button>
+            </div>
+        </div>
+        <div class="chatbot-content-container"></div>
+        <div class="chatbot-input-container">
+            <div class="chatbot-input-background"></div>
+            <input type="text" class="chatbot-input" placeholder="Введите вопрос...">
+            <img src="../img/rightarrow_116394.svg" alt="" class="chatbot-input-send" onclick="sendMessage()">
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../img/mainicon.png" alt="Logo" width="140" height="60">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"  id="locationButton">
+                        <a class="nav-link" href="#">
+                            <img class="located" src="../img/located.svg" /> Кострома
+                        </a>
+                    </li>
+                    <div class="location-modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2>Выберите город</h2>
+                            <select id="country-select">
+                                <option value="Russia">Россия</option>
+                            </select>
+                            <select id="city-select">
+                                <option value="Kostroma">Кострома</option>
+                            </select>
+                        </div>
+                    </div>
+                    <li class="nav-item" id="openLanguageModalButton"> 
+                        <a class="nav-link" href="#"> 
+                            <img class="located" src="../img/located-1.svg" /> Русский 
+                        </a> 
+                    </li> 
+                    <div id="languageModal" class="location-modal"> 
+                        <div class="modal-content"> 
+                            <span class="close" id="close">&times;</span> 
+                            <input type="text" id="languageSearch" placeholder="Поиск языка..."> 
+                            <ul id="languageList"> 
+                                <li data-lang="ru">Русский</li> 
+                                <li data-lang="en">English</li> 
+                                <li data-lang="fr">Français</li> 
+                            </ul> 
+                        </div> 
+                    </div>
+                    <li class="nav-item">
+                        <a class="nav-link" id="openThemeModalButton" href="#">
+                            <img class="located" src="../img/located-2.svg" /> Настройки
+                        </a>
+                    </li>
+                    <div id="themeModal" class="modal">
+                        <div class="modal-content">
+                          <span class="close">&times;</span>
+                          <h2>Выберите тему</h2>
+                          <ul id="themeOptions">
+                            <li data-theme="light">Светлая тема</li>
+                            <li data-theme="dark">Темная тема</li>
+                          </ul>
+                        </div>
+                      </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img class="located" src="../img/located-3.svg" /> +7 (915) 929-91-55
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <img class="profile" src="../img/profile.svg" />
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="trash.html">
+                          <img class="trash" src="../img/trash.svg" />
+                      </a>
+                  </li>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="col-12 col-md-3" style="border-right: none;">
+                <div class="section d-flex align-items-center mb-3">
+                    <div class="delivery-pickup-buttons d-flex">
+                        <a href="delivery.html" class="btn btn-outline-secondary btn-lg delivery-btn active"> 
+                            Доставка 
+                        </a> 
+                        <a href="samovivoz.html" class="btn btn-outline-secondary btn-lg pickup-btn"> 
+                            Самовывоз 
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <form action="#" class="d-flex flex-grow-1 justify-content-end align-items-center">
+                <img class="SVG" src="../img/svg.svg" style="margin-right: 10px;">
+                <input type="search" placeholder="Укажите адрес доставки..." class="form-control flex-grow-1 mr-4">
+                <button type="submit" class="btn btn-outline-dark">
+                     Изменить
+                </button>
+            </form>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="container mt-2 col-8">
+                <div class="row">
+                    <!-- Отзывы -->
+                    <div class="col-md-4 text-center" style="border: none;">
+                        <div class="btn-container">
+                            <button class="btn oval-btn">
+                                <div href="reviews.html" class="img-container">
+                                    <img href="reviews.html" class="img" src="../img/span-main-nav-icon-3.svg" alt="Отзывы" />
+                                </div>
+                                <div class="text-container">
+                                    <a href="reviews.html" class="btn-text">Отзывы</a>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Главная -->
+                    <div class="col-md-4 text-center" style="border: none;">
+                        <div class="btn-container">
+                            <button class="btn oval-btn">
+                                <div href="index.html" class="img-container">
+                                    <img href="index.html" class="img" src="../img/span-main-nav-icon-2.svg" alt="Главная" />
+                                </div>
+                                <div class="text-container">
+                                    <a href="index.html" class="btn-text">Главная</a>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- О нас -->
+                    <div class="col-md-4 text-center" style="border: none;">
+                        <div class="btn-container">
+                            <button class="btn oval-btn">
+                                <div href="about.html" class="img-container">
+                                    <img href="about.html" class="img" src="../img/span-main-nav-icon-1.svg" alt="О нас" />
+                                </div>
+                                <div class="text-container">
+                                    <a href="about.html" class="btn-text">О нас</a>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+              </div>  
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid" style="background-color: black; border-radius: 20px;">
+            <div class="container mt-2 col-10">
+                <div class="row" id="rowmain">
+                    <div class="col-md-3 text-center">
+                        <div class="img-container">
+                            <img class="image" src="../img/3.svg" alt="Беспл. доставка" />
+                        </div>
+                        <div class="text-container">
+                            <div>Беспл. доставка</div>
+                            <div>от 800 ₽</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="img-container">
+                            <img class="image" src="../img/2.svg" alt="Стоим. доставки" />
+                        </div>
+                        <div class="text-container">
+                            <div>Стоим. доставки</div>
+                            <div>100 ₽</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="img-container">
+                            <img class="image" src="../img/1.svg" alt="Мин. сумма заказа" />
+                        </div>
+                        <div class="text-container">
+                            <div>Мин. сумма заказа</div>
+                            <div>600 ₽</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="img-container">
+                            <img class="image" src="../img/image-2.svg" alt="Беспл. доставка" />
+                        </div>
+                        <div class="text-container">
+                            <div>Время доставки</div>
+                            <div>до 90 мин.</div>
+                        </div>
+                    </div>
+                </div>
+              </div>  
+        </div>
+    </nav>
+    <header id="header" class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000;">
+            <div class="container">
+                <a href="index.html" class="navbar-brand"><img src="../img/mainicon.png" alt="Logo" width="70" height="40">ШашлычОК</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent"
+                    aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navContent">
+                    <ul class="navbar-nav mr-auto me-3 mb-lg-0">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Популярное</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="shaurma.html" class="nav-link">Шаурма</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="shaslik.html" class="nav-link">Шашлык</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="shaslik1.html" class="nav-link">Шашлык 1кг готового мяса</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="salati.html" class="nav-link">Салаты</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="zakuski.html" class="nav-link">Закуски</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="sous.html" class="nav-link">Соус</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="cart-section">
+        <h2>Корзина</h2>
+        <div class="cart-items" id="cart-items">
+            
+        </div>
+        <div class="cart-total">
+            <p>Общая стоимость: <span id="total-price">0</span> ₽</p>
+        </div>
+        <hr class="divider">
+        <button id="clear-cart-button">Удалить всё</button>
+    </section>
+    
+    <section class="section-two">
+        <div class="row">
+            <div class="col-lg-6 mb-10">
+                <h2 class="mb-3">Информация об оплате</h2>
+                <ul class="list-group d-flex align-items-start">
+                    <li class="list-group-item rounded col-md-12 mb-10">
+                        <h3 class="col-md-6 mb-3">Наличный расчёт</h3>
+                        <p>
+                            Оплата производится наличными курьеру при доставке заказа или самовывозом из точки продаж.
+                            При оформлении заказа укажите сумму, с которой Вам необходима сдача.
+                        </p>
+                    </li>
+                    <li class="list-group-item rounded col-md-12 mb-10">
+                        <h3 class="col-md-6 mb-3">Картой</h3>
+                        <p>
+                            Оплата производится банковской картой курьеру при доставке заказа или при самовывозе из точки продаж.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-info">
+                            <h3>Мы в социальных сетях:</h3>
+                            <img src="../img/mainicon.png" alt="Logo" width="100" height="60"> <br>
+                            <p>© ШашлычОК <br>
+                                Россия, 2023 <br>
+                                <strong>Телефон:</strong>   +7 (915) 929-91-55 <br>
+                                <strong>Email:</strong>  gayk-agabekyan@mail.ru <br>
+                            </p>
+                            <img src="../img/icons8-vk-48.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 footer-links">
+                        <h4>Документация</h4>
+                        <ul>
+                            <li><a href="polzsogl.html">Пользовательское соглашение</a></li>
+                            <li><a href="licsogl.html">Лицензионное соглашение</a></li>
+                            <li><a href="uslov.html">Условия акции сервиса</a></li>
+                            <li><a href="conf.html">Политика конфиденциальности</a></li>
+                            <li><a href="oplata.html">Правила оплаты</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Навигация</h4>
+                        <ul>
+                            <li><a href="index.html">Главная</a></li>
+                            <li><a href="reviews.html">Отзывы</a></li>
+                            <li><a href="about.html">О нас</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/trash.js"></script>
+    <script src="../js/theme-modal.js"></script>
+    <script src = "../js/language-modal.js"></script>
+    <script src = "../js/location-modal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

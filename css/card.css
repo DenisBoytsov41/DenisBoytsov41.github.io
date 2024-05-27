@@ -1,0 +1,141 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1180px;
+    height: 500px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5%;
+    background-color: #2a2a2a;
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    margin-top: 20px;
+    position: relative;
+}
+.button-add-to-cart {
+    position: absolute;
+    bottom: 30px;
+    right: 10px;
+}
+
+
+.card-img-top {
+    border-radius: 18px;
+}
+.card-body h5{
+    color: white;
+    font-size: 1.5em;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+#page-container .col-md-3 {
+    border: none!important;
+}
+
+.text-wrapper-3 {
+    display: inline-block;
+    margin-right: 10px;
+    color: orange;
+}
+
+.button-add-to-cart {
+    vertical-align: middle;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+
+.button-add-to-cart:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-add-to-cart:active {
+    transform: scale(1);
+    box-shadow: none;
+}
+.custom-div {
+    width: 280px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+@media (max-width: 320px) {
+    .custom-div {
+        width: 280px;
+    }
+    .container .row .col-md-3 {
+        border: none!important;
+        border-bottom: 1px solid white!important;
+    }
+    .col-md-3:last-child{
+        border-bottom: 1px solid white!important;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 375px) {
+    .custom-div {
+        width: 335px;
+    }
+    .col-md-3:last-child{
+        border-bottom: 1px solid white!important;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+    .custom-div {
+        width: 380px; 
+    }
+    .col-md-3:last-child{
+        border-bottom: 1px solid white!important;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .custom-div {
+        width: 700px;
+    }
+    .col-md-3:last-child{
+        border-bottom: 1px solid white!important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .custom-div {
+        width: 960px;
+    }
+    .button-add-to-cart {
+        position: absolute;
+        bottom: 5px;
+        right: -15px;
+    }
+    #page-container {
+        align-items: center;
+        justify-content: center;
+    }
+    .container .row {
+        align-items: center;
+        justify-content: center;
+    }
+    .col-md-3:last-child{
+        border-bottom: 1px solid white!important;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1443px) {
+    #page-container {
+        align-items: center;
+        justify-content: center;
+    }
+    .container .row {
+        align-items: center;
+        justify-content: center;
+    }
+}

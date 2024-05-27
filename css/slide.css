@@ -1,0 +1,249 @@
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1180px;
+    height: 600px;
+    /*max-height: 450px;*/
+    align-items: center;
+    justify-content: space-between;
+    padding: 5%;
+    background-color: #2a2a2a;
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit; 
+    margin-top: 20px;
+  }
+  
+  
+  .div-position {
+    width: 100%;
+  }
+  
+  .element {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .div-product-wrapper {
+    width: 100%;
+  }
+  
+  .div-product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .label {
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 36px;
+    letter-spacing: 0;
+    white-space: wrap;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  .img {
+    width: 89px;
+    height: auto;
+  }
+  
+  .p-product {
+    font-family: "Montserrat-Regular", Helvetica;
+    font-weight: 400;
+    color: #8e8e8e;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22.4px;
+    white-space: wrap;
+    text-decoration: none;
+  }
+  
+  .div-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #ed711f;
+    background-color: #272727;
+    margin-top: 5px;
+    margin-left: 1em;
+  }
+  
+  .text-wrapper-2 {
+    font-family: "Montserrat-Medium", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16.8px;
+    white-space: nowrap;
+  }
+  
+  .div-product-menu-2 {
+    border-top-width: 6px;
+    border-top-style: solid;
+    border-color: #2f2f2f;
+    padding-top: 10px;
+  }
+  
+  .text-wrapper-3 {
+    font-family: "Montserrat-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #ed711f;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 33.6px;
+    white-space: nowrap;
+  }
+  a.text-wrapper-3 {
+    text-decoration: none;
+    color: inherit; 
+}
+.label {
+    text-decoration: none;
+}
+.button-add-to-cart {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.button-add-to-cart:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-add-to-cart:active {
+  transform: scale(1);
+  box-shadow: none;
+}
+
+.quantity-button {
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 0 5px;
+  outline: none;
+}
+
+.remove-button {
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  outline: none;
+  margin-left: 10%;
+}
+.quantity-button:hover {
+  background-color: darkorange;
+}
+
+.remove-button:hover {
+  background-color: darkorange;
+}
+.cart-items{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .label {
+        font-size: 1.6em; 
+    }
+
+    .text-wrapper-2 {
+        font-size: 1.2em; 
+    }
+
+    .text-wrapper-3 {
+        font-size: 1.2em; 
+    }
+    .element {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 480px) {
+    .label {
+        font-size: 1.6em;
+    }
+
+    .text-wrapper-2 {
+        font-size: 1.2em;
+    }
+
+    .text-wrapper-3 {
+        font-size: 1.2em;
+    }
+    .element {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+  }
+}
+@media screen and (max-width: 375px) {
+  .label {
+      font-size: 1em;
+  }
+
+  .text-wrapper-2 {
+      font-size: 0.8em;
+  }
+
+  .text-wrapper-3 {
+      font-size: 0.8em;
+  }
+  .screen
+  {
+    height: 530px;
+  }
+  .element {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+}
+@media screen and (max-width: 320px) {
+  .label {
+      font-size: 1.2em;
+  }
+
+  .text-wrapper-2 {
+      font-size: 1em;
+  }
+
+  .text-wrapper-3 {
+      font-size: 1em;
+  }
+  .screen
+  {
+    height: 600px;
+  }
+  .element {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+}
